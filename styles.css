@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-body {
+body,html {
     font-family: "Inter", Arial;
     background-color: #f4f4f4;
     margin: 20px auto;
@@ -15,6 +15,7 @@ body {
     align-items: center;
     font-weight: 300;
     font-size: 12px;
+    overflow-x: hidden;
 }
 
 .container {
@@ -42,13 +43,12 @@ body {
 .income-card, .expense-card {
     flex: 1;
     padding: 20px;
-    /* background-color: skyblue; */
     text-align: center;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
-}
 
+}
 
 .income-card {
     color: green;
@@ -130,6 +130,64 @@ button:hover {
 .btn li {
     cursor: pointer;
 }
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+  body, html {
+    font-size: 16px; /* slightly bigger font on mobile */
+  }
+
+  .container {
+    margin: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .summary-card {
+    flex-direction: column; /* stack income and expense vertically */
+    gap: 15px;
+  }
+
+  .income-card,
+  .expense-card {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  form input[type="text"],
+  form input[type="number"] {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  button#add-transaction {
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  #transaction-list li {
+    flex-direction: column; /* stack content vertically */
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 15px;
+  }
+
+  #transaction-list li span {
+    word-break: break-word; /* wrap long text */
+  }
+
+  .btn {
+    gap: 15px;
+    justify-content: flex-start;
+  }
+
+  .btn i {
+    font-size: 22px;
+  }
+}
+
 
 
 
