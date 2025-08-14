@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html {
+    font-family: "Inter", Arial;
+    background-color: #f4f4f4;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    font-size: 12px;
+    overflow-x: hidden;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.balance-card {
+    background-image: linear-gradient(to right, #6a0dad, #a55eea);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.summary-card {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.income-card, .expense-card {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+.income-card {
+    color: green;
+    background-color: #d4edda7a;
+    
+}
+
+.expense-card {
+    color: red;
+    background-color: #f8d7da49;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 15px 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.radios {
+    display: flex;
+    gap: 5px;
+}
+
+.radio-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.radio-buttons label {
+    font-weight: 600;
+}
+
+button {
+    padding: 20px;
+    border: none;
+    background-image: linear-gradient(to right, #6a0dad, #a55eea);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-image: linear-gradient(to right, #000, #000);
+}
+
+.income {
+    color: green;
+}
+
+.expense {
+    color: red;
+}
+
+.recent-transactions {
+    margin-top: 20px;
+}
+
+#transaction-list li {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.btn {
+    display: flex;
+    gap: 10px;
+}
+
+.btn li {
+    cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+  body, html {
+    font-size: 16px; /* slightly bigger font on mobile */
+  }
+
+  .container {
+    margin: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .summary-card {
+    flex-direction: column; /* stack income and expense vertically */
+    gap: 15px;
+  }
+
+  .income-card,
+  .expense-card {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  form input[type="text"],
+  form input[type="number"] {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  button#add-transaction {
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  #transaction-list li {
+    flex-direction: column; /* stack content vertically */
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 15px;
+  }
+
+  #transaction-list li span {
+    word-break: break-word; /* wrap long text */
+  }
+
+  .btn {
+    gap: 15px;
+    justify-content: flex-start;
+  }
+
+  .btn i {
+    font-size: 22px;
+  }
+}

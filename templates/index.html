@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <title>Ledgerly</title>
+</head>
+<body>
+    <h1>Ledgerly</h1>
+    <p>Track your daily transactions easily.</p>
+    <div class="container">
+        <div class="balance-card">
+            <h3>Your Balance</h3>
+            <h1 id="balance">₦0.00</h1>
+        </div>
+
+        <!-- summary card  -->
+
+        <div class="summary-card">
+            <div class="income-card">
+                <h3>Income</h3>
+                <h1 id="income">₦0.00</h1>
+            </div>
+
+            <div class="expense-card">
+                <h3>Expense</h3>
+                <h1 id="expense">₦0.00</h1>
+            </div>
+        </div>
+
+        <!-- entry form  -->
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="text" name="description" id="desc" placeholder="Description">
+            <input type="text" name="amount" id="amount" placeholder="Amount">
+            <div class="radio-buttons">
+                <div class="radios">
+                    <input type="radio" name="type" id="income-radio" value="income" checked>
+                    <label for="income-radio">Income</label>
+                </div>
+                <div class="radios">
+                    <input type="radio" name="type" id="expense-radio" value="expense">
+                    <label for="expense-radio">Expense</label>
+                </div>
+            </div>
+            <button type="submit" id="add-transaction">Add Transaction</button>
+        </form>
+
+        <!-- transactions list  -->
+
+        <div class="recent-transactions">
+            <h2>Recent Transactions</h2>
+            <ul id="transaction-list">
+                
+            </ul>
+        </div>
+    </div>
+    <!-- <script src="{% static 'js/scripts.js' %}"></script> -->
+</body>
+</html>
